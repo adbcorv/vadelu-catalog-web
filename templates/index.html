@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f4ef">
+
+    <title>VATRA DE LUCIEN — Beyond Ordinary</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- LOADER -->
+    <div class="loader" id="loader">
+        <h1>VATRA</h1>
+        <span>DE LUCIEN</span>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar glass" id="navbar">
+
+        <a href="#home" class="logo">
+            VATRA <span>DE LUCIEN</span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#home">HOME</a>
+            <a href="#collection">COLLECTION</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+
+        <div class="nav-actions">
+            <button id="searchToggle" aria-label="Search">⌕</button>
+            <button id="bagToggle" aria-label="Shopping bag">
+                BAG (<span id="bagCount">0</span>)
+            </button>
+            <button id="menuToggle" class="menu-toggle" aria-label="Menu">☰</button>
+        </div>
+
+    </nav>
+
+    <!-- SEARCH -->
+    <div class="search-panel glass" id="searchPanel">
+        <input type="text" id="searchInput" placeholder="Search collection...">
+        <button id="searchClose">✕</button>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-bg"></div>
+        <div class="hero-shade"></div>
+
+        <div class="hero-content">
+            <p class="eyebrow">EST. 2024 — INDEPENDENT FASHION LABEL</p>
+
+            <h1>
+                BEYOND<br>
+                <span>ORDINARY.</span>
+            </h1>
+
+            <p class="hero-description">
+                An expression of identity through timeless pieces.
+                Made for those who dare to be different.
+            </p>
+
+            <a href="#collection" class="primary-btn">
+                EXPLORE COLLECTION ↗
+            </a>
+        </div>
+
+        <div class="hero-bottom">
+            <span>VATRA DE LUCIEN</span>
+            <span>01 — 26</span>
+        </div>
+
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>BEYOND ORDINARY ✳ VATRA DE LUCIEN ✳ DEFINE YOUR IDENTITY ✳ </span>
+            <span>BEYOND ORDINARY ✳ VATRA DE LUCIEN ✳ DEFINE YOUR IDENTITY ✳ </span>
+        </div>
+    </div>
+
+    <!-- INTRO -->
+    <section class="intro section-padding reveal">
+
+        <p class="eyebrow">OUR PHILOSOPHY</p>
+
+        <h2>
+            NOT JUST CLOTHING.<br>
+            <span>A STATEMENT OF IDENTITY.</span>
+        </h2>
+
+        <p>
+            We believe fashion is more than what you wear.
+            It is a reflection of who you are, what you believe,
+            and how you choose to express yourself.
+        </p>
+
+    </section>
+
+    <!-- COLLECTION -->
+    <section class="collection section-padding" id="collection">
+
+        <div class="section-heading reveal">
+            <div>
+                <p class="eyebrow">DISCOVER OUR PIECES</p>
+                <h2>THE COLLECTION<span>.</span></h2>
+            </div>
+
+            <p class="section-note">
+                Carefully selected pieces<br>
+                for everyday expression.
+            </p>
+        </div>
+
+        <!-- CATEGORY FILTER -->
+        <div class="category-filter glass" id="categoryFilter">
+
+            <span class="filter-indicator" id="filterIndicator"></span>
+
+            <button class="filter-btn active" data-category="all">
+                ALL ITEMS
+            </button>
+
+            <button class="filter-btn" data-category="kaos">
+                T-SHIRTS
+            </button>
+
+            <button class="filter-btn" data-category="outerwear">
+                OUTERWEAR
+            </button>
+
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div class="product-grid" id="productGrid">
+
+            <!-- PRODUCT 1 -->
+            <article class="product-card reveal"
+                data-category="kaos"
+                data-name="Vatra Signature Tee"
+                data-price="189000"
+                data-image="{{ url_for('static', filename='images/kaos-1-front.jpg') }}"
+                data-description="A signature oversized t-shirt designed for everyday expression.">
+
+                <div class="product-image">
+
+                    <div class="product-slides">
+                        <img class="product-slide active"
+                            src="{{ url_for('static', filename='images/kaos-1-front.jpg') }}"
+                            alt="Vatra Signature Tee Front">
+
+                        <img class="product-slide"
+                            src="{{ url_for('static', filename='images/kaos-1-back.jpg') }}"
+                            alt="Vatra Signature Tee Back">
+                    </div>
+
+                    <button class="slide-arrow prev" aria-label="Previous photo">‹</button>
+                    <button class="slide-arrow next" aria-label="Next photo">›</button>
+
+                    <div class="slide-indicators">
+                        <span class="slide-dot active"></span>
+                        <span class="slide-dot"></span>
+                    </div>
+
+                    <button class="quick-view">QUICK VIEW ↗</button>
+                </div>
+
+                <div class="product-info">
+                    <div>
+                        <h3>Venereum Poetica T-shirt</h3>
+                        <p>Rp189.000</p>
+                    </div>
+                    <button class="add-to-bag">+</button>
+                </div>
+
+            </article>
+
+            <!-- PRODUCT 2 -->
+            <article class="product-card reveal"
+                data-category="kaos"
+                data-name="Noir Graphic Tee"
+                data-price="199000"
+                data-image="{{ url_for('static', filename='images/kaos-2-front.jpg') }}"
+                data-description="A graphic statement piece with a contemporary silhouette.">
+
+                <div class="product-image">
+
+                    <div class="product-slides">
+                        <img class="product-slide active"
+                            src="{{ url_for('static', filename='images/kaos-2-front.jpg') }}"
+                            alt="Noir Graphic Tee Front">
+
+                        <img class="product-slide"
+                            src="{{ url_for('static', filename='images/kaos-2-back.jpg') }}"
+                            alt="Noir Graphic Tee Back">
+                    </div>
+
+                    <button class="slide-arrow prev" aria-label="Previous photo">‹</button>
+                    <button class="slide-arrow next" aria-label="Next photo">›</button>
+
+                    <div class="slide-indicators">
+                        <span class="slide-dot active"></span>
+                        <span class="slide-dot"></span>
+                    </div>
+
+                    <button class="quick-view">QUICK VIEW ↗</button>
+                </div>
+
+                <div class="product-info">
+                    <div>
+                        <h3>Dramatic life T-shirt</h3>
+                        <p>Rp199.000</p>
+                    </div>
+                    <button class="add-to-bag">+</button>
+                </div>
+
+            </article>
+
+            <!-- PRODUCT 3 -->
+            <article class="product-card reveal"
+                data-category="kaos"
+                data-name="Identity Oversized Tee"
+                data-price="189000"
+                data-image="{{ url_for('static', filename='images/kaos-3-front.jpg') }}"
+                data-description="Minimal design, oversized fit, and effortless character.">
+
+                <div class="product-image">
+
+                    <div class="product-slides">
+                        <img class="product-slide active"
+                            src="{{ url_for('static', filename='images/kaos-3-front.jpg') }}"
+                            alt="Identity Oversized Tee Front">
+
+                        <img class="product-slide"
+                            src="{{ url_for('static', filename='images/kaos-3-back.jpg') }}"
+                            alt="Identity Oversized Tee Back">
+                    </div>
+
+                    <button class="slide-arrow prev" aria-label="Previous photo">‹</button>
+                    <button class="slide-arrow next" aria-label="Next photo">›</button>
+
+                    <div class="slide-indicators">
+                        <span class="slide-dot active"></span>
+                        <span class="slide-dot"></span>
+                    </div>
+
+                    <button class="quick-view">QUICK VIEW ↗</button>
+                </div>
+
+                <div class="product-info">
+                    <div>
+                        <h3>Can never hate you T-shirt</h3>
+                        <p>Rp189.000</p>
+                    </div>
+                    <button class="add-to-bag">+</button>
+                </div>
+
+            </article>
+
+            <!-- PRODUCT 4 -->
+            <article class="product-card reveal"
+                data-category="outerwear"
+                data-name="Lucien Oversized Hoodie"
+                data-price="329000"
+                data-image="{{ url_for('static', filename='images/outerwear-1-front.jpg') }}"
+                data-description="An everyday essential with a relaxed oversized silhouette.">
+
+                <div class="product-image">
+
+                    <div class="product-slides">
+                        <img class="product-slide active"
+                            src="{{ url_for('static', filename='images/outerwear-1-front.jpg') }}"
+                            alt="Lucien Hoodie Front">
+
+                        <img class="product-slide"
+                            src="{{ url_for('static', filename='images/outerwear-1-back.jpg') }}"
+                            alt="Lucien Hoodie Back">
+                    </div>
+
+                    <button class="slide-arrow prev" aria-label="Previous photo">‹</button>
+                    <button class="slide-arrow next" aria-label="Next photo">›</button>
+
+                    <div class="slide-indicators">
+                        <span class="slide-dot active"></span>
+                        <span class="slide-dot"></span>
+                    </div>
+
+                    <button class="quick-view">QUICK VIEW ↗</button>
+                </div>
+
+                <div class="product-info">
+                    <div>
+                        <h3>Icarus Hoodie</h3>
+                        <p>Rp329.000</p>
+                    </div>
+                    <button class="add-to-bag">+</button>
+                </div>
+
+            </article>
+
+            <!-- PRODUCT 5 -->
+            <article class="product-card reveal"
+                data-category="outerwear"
+                data-name="Vatra Varsity Jacket"
+                data-price="399000"
+                data-image="{{ url_for('static', filename='images/outerwear-2-front.jpg') }}"
+                data-description="A classic varsity-inspired jacket with a modern attitude.">
+
+                <div class="product-image">
+
+                    <div class="product-slides">
+                        <img class="product-slide active"
+                            src="{{ url_for('static', filename='images/outerwear-2-front.jpg') }}"
+                            alt="Vatra Varsity Jacket Front">
+
+                        <img class="product-slide"
+                            src="{{ url_for('static', filename='images/outerwear-2-back.jpg') }}"
+                            alt="Vatra Varsity Jacket Back">
+                    </div>
+
+                    <button class="slide-arrow prev" aria-label="Previous photo">‹</button>
+                    <button class="slide-arrow next" aria-label="Next photo">›</button>
+
+                    <div class="slide-indicators">
+                        <span class="slide-dot active"></span>
+                        <span class="slide-dot"></span>
+                    </div>
+
+                    <button class="quick-view">QUICK VIEW ↗</button>
+                </div>
+
+                <div class="product-info">
+                    <div>
+                        <h3>Alter Ego Hoodie</h3>
+                        <p>Rp399.000</p>
+                    </div>
+                    <button class="add-to-bag">+</button>
+                </div>
+
+            </article>
+
+            <!-- PRODUCT 6 -->
+            <article class="product-card reveal"
+                data-category="outerwear"
+                data-name="Essential Zip Jacket"
+                data-price="349000"
+                data-image="{{ url_for('static', filename='images/outerwear-3-front.jpg') }}"
+                data-description="A versatile zip jacket made for effortless layering.">
+
+                <div class="product-image">
+
+                    <div class="product-slides">
+                        <img class="product-slide active"
+                            src="{{ url_for('static', filename='images/outerwear-3-front.jpg') }}"
+                            alt="Essential Zip Jacket Front">
+
+                        <img class="product-slide"
+                            src="{{ url_for('static', filename='images/outerwear-3-back.jpg') }}"
+                            alt="Essential Zip Jacket Back">
+                    </div>
+
+                    <button class="slide-arrow prev" aria-label="Previous photo">‹</button>
+                    <button class="slide-arrow next" aria-label="Next photo">›</button>
+
+                    <div class="slide-indicators">
+                        <span class="slide-dot active"></span>
+                        <span class="slide-dot"></span>
+                    </div>
+
+                    <button class="quick-view">QUICK VIEW ↗</button>
+                </div>
+
+                <div class="product-info">
+                    <div>
+                        <h3>Our hands Hoodie</h3>
+                        <p>Rp349.000</p>
+                    </div>
+                    <button class="add-to-bag">+</button>
+                </div>
+
+            </article>
+
+        </div>
+
+        <p class="empty-message" id="emptyMessage">
+            No products found.
+        </p>
+
+    </section>
+
+    <!-- EDITORIAL -->
+    <section class="editorial">
+
+        <img src="{{ url_for('static', filename='images/editorial.jpg') }}" alt="Vatra Editorial">
+
+        <div class="editorial-overlay">
+            <p class="eyebrow">A DIFFERENT PERSPECTIVE</p>
+            <h2>DEFINE YOUR<br>OWN STANDARD.</h2>
+            <a href="#about" class="light-btn">DISCOVER OUR STORY ↗</a>
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery section-padding" id="gallery">
+
+        <div class="section-heading reveal">
+            <div>
+                <p class="eyebrow">VISUAL DIARY</p>
+                <h2>THE GALLERY<span>.</span></h2>
+            </div>
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item gallery-tall reveal">
+                <img src="{{ url_for('static', filename='images/gallery-1.jpg') }}" alt="Gallery 1">
+                <span>01 / EXPRESSION</span>
+            </div>
+
+            <div class="gallery-item reveal">
+                <img src="{{ url_for('static', filename='images/gallery-2.jpg') }}" alt="Gallery 2">
+                <span>02 / IDENTITY</span>
+            </div>
+
+            <div class="gallery-item reveal">
+                <img src="{{ url_for('static', filename='images/gallery-3.jpg') }}" alt="Gallery 3">
+                <span>03 / MOVEMENT</span>
+            </div>
+
+            <div class="gallery-item gallery-wide reveal">
+                <img src="{{ url_for('static', filename='images/gallery-4.jpg') }}" alt="Gallery 4">
+                <span>04 / BEYOND</span>
+            </div>
+
+            <div class="gallery-item reveal">
+                <img src="{{ url_for('static', filename='images/gallery-5.jpg') }}" alt="Gallery 5">
+                <span>05 / ORDINARY</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about section-padding" id="about">
+
+        <div class="about-image reveal">
+            <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="About Vatra">
+        </div>
+
+        <div class="about-content reveal">
+
+            <p class="eyebrow">WHO WE ARE</p>
+
+            <h2>
+                MADE TO<br>
+                <span>STAND OUT.</span>
+            </h2>
+
+            <p>
+                VATRA DE LUCIEN is an independent fashion label
+                built around individuality, creativity, and self-expression.
+            </p>
+
+            <p>
+                We create pieces that go beyond trends.
+                Every collection represents a different perspective
+                and a unique way to express yourself.
+            </p>
+
+            <a href="#contact" class="text-link">
+                GET TO KNOW US ↗
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section-padding" id="contact">
+
+        <p class="eyebrow">LET'S CONNECT</p>
+
+        <h2>
+            YOUR NEXT<br>
+            <span>STATEMENT STARTS HERE.</span>
+        </h2>
+
+        <p>
+            Explore our latest pieces and discover
+            the collection through our Instagram catalog.
+        </p>
+
+        <a href="https://www.instagram.com/vadelu.catalog/"
+           class="instagram-btn glass"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <span>VISIT OUR INSTAGRAM</span>
+            <span>↗</span>
+
+        </a>
+
+        <p class="instagram-handle">@vadelu.catalog</p>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <div>
+                <a href="#home" class="footer-logo">VATRA DE LUCIEN</a>
+                <p>BEYOND ORDINARY.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#home">HOME</a>
+                <a href="#collection">COLLECTION</a>
+                <a href="#gallery">GALLERY</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+
+            <div>
+                <p>FOLLOW OUR JOURNEY</p>
+                <a href="https://www.instagram.com/vadelu.catalog/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    INSTAGRAM ↗
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 VATRA DE LUCIEN</span>
+            <span>DESIGNED BEYOND ORDINARY.</span>
+        </div>
+
+    </footer>
+
+    <!-- SHOPPING BAG OVERLAY -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- SHOPPING BAG -->
+    <aside class="bag-drawer" id="bagDrawer">
+
+        <div class="drawer-header">
+            <h2>YOUR BAG (<span id="drawerCount">0</span>)</h2>
+            <button id="bagClose">✕</button>
+        </div>
+
+        <div class="bag-items" id="bagItems">
+            <p class="bag-empty">Your bag is currently empty.</p>
+        </div>
+
+        <div class="drawer-footer">
+            <div class="bag-total">
+                <span>TOTAL</span>
+                <strong id="bagTotal">Rp0</strong>
+            </div>
+
+            <button class="checkout-btn" id="checkoutBtn">
+                CHECKOUT
+            </button>
+        </div>
+
+    </aside>
+
+    <!-- QUICK VIEW MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+
+        <div class="quick-modal">
+
+            <button class="modal-close" id="modalClose">✕</button>
+
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="Product">
+            </div>
+
+            <div class="modal-info">
+
+                <p class="eyebrow">VATRA DE LUCIEN</p>
+
+                <h2 id="modalName">Product Name</h2>
+
+                <h3 id="modalPrice">Rp0</h3>
+
+                <p id="modalDescription"></p>
+
+                <label for="modalSize">SELECT SIZE</label>
+
+                <select id="modalSize">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+
+                <button class="modal-add" id="modalAdd">
+                    ADD TO BAG
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
